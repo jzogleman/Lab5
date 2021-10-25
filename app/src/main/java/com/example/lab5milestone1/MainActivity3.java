@@ -31,7 +31,6 @@ public class MainActivity3 extends AppCompatActivity {
         textView3 = (EditText) findViewById(R.id.textView3);
         Intent intent = getIntent();
         noteid = intent.getIntExtra("noteid", -1);
-        Log.i("OnClick", "noteid = " + noteid);
 
 
         if(noteid != -1){
@@ -61,11 +60,9 @@ public class MainActivity3 extends AppCompatActivity {
 
         if(noteid == -1){
             title = "NOTE_" + (MainActivity2.notes.size() + 1);
-            Log.i("OnClick", "New Note");
             helper.saveNotes(username, title, noteContent, date);
         }else {
             title = "NOTE_" + (noteid + 1);
-            Log.i("OnClick", "Updating");
             helper.updateNote(title, date, noteContent, username);
         }
 

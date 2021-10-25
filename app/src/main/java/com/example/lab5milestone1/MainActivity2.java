@@ -57,7 +57,6 @@ public class MainActivity2 extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity3.class);
                 intent.putExtra("noteid", position);
-                Log.i("OnClick", "position = " + position);
                 startActivity(intent);
             }
         });
@@ -73,7 +72,6 @@ public class MainActivity2 extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.logout:
-                Log.d("myTag", "logout?" );
                 SharedPreferences sharedPreferences = getSharedPreferences("<com.example.lab5milestone1>", Context.MODE_PRIVATE);
                 sharedPreferences.edit().remove("username").apply();
                 goToActivity1();
